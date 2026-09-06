@@ -1,0 +1,13 @@
+.venv/
+.tools/
+__pycache__/
+.pytest_cache/
+*.egg-info/
+*.pyc
+.env
+experiments/raw/
+experiments/processed/
+ml/artifacts/
+infrastructure/kubeconfig
+*.log
+!docs/evidence/*.log
