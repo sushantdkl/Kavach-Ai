@@ -1,0 +1,6 @@
+{"repetition": 0, "request_utc": 1788687226.8258152, "ready_utc": 1788687230.790915, "decision_to_ready_s": 3.969000000000051, "poll_resolution_s": 0.2}
+{"repetition": 1, "request_utc": 1788687234.0320275, "ready_utc": 1788687237.792866, "decision_to_ready_s": 3.7650000000003274, "poll_resolution_s": 0.2}
+{"repetition": 2, "request_utc": 1788687241.0288756, "ready_utc": 1788687244.7892923, "decision_to_ready_s": 3.7650000000003274, "poll_resolution_s": 0.2}
+{"repetition": 3, "request_utc": 1788687248.0285318, "ready_utc": 1788687251.7886405, "decision_to_ready_s": 3.7650000000003274, "poll_resolution_s": 0.2}
+{"repetition": 4, "request_utc": 1788687255.02813, "ready_utc": 1788687258.9987364, "decision_to_ready_s": 3.967999999999847, "poll_resolution_s": 0.2}
+experiments\raw\20260906T093343Z-readiness-713fbe05

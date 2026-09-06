@@ -1,0 +1,135 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 526B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 220B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 36.45kB 0.0s done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c
+#5 resolve docker.io/library/python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c 0.0s done
+#5 DONE 0.0s
+
+#6 [2/5] WORKDIR /srv
+#6 CACHED
+
+#7 [3/5] COPY requirements-workload.lock /srv/
+#7 DONE 0.0s
+
+#8 [4/5] RUN pip install --no-cache-dir --require-hashes -r requirements-workload.lock     && groupadd --gid 10001 kavach && useradd --uid 10001 --gid 10001 --no-create-home kavach
+#8 2.778 Ignoring cffi: markers '(implementation_name == "pypy" and platform_python_implementation != "CPython") or (implementation_name == "pypy" and sys_platform != "win32") or (platform_python_implementation == "CPython" and sys_platform == "win32")' don't match your environment
+#8 2.778 Ignoring colorama: markers 'sys_platform == "win32"' don't match your environment
+#8 2.779 Ignoring pycparser: markers '(implementation_name == "pypy" and platform_python_implementation != "CPython") or (implementation_name != "PyPy" and platform_python_implementation == "CPython" and sys_platform == "win32") or (implementation_name == "pypy" and sys_platform != "win32")' don't match your environment
+#8 2.780 Ignoring pywin32: markers 'sys_platform == "win32"' don't match your environment
+#8 2.929 Collecting bidict==0.24.1 (from -r requirements-workload.lock (line 3))
+#8 3.074   Downloading bidict-0.24.1-py3-none-any.whl (36 kB)
+#8 3.130 Collecting blinker==1.9.0 (from -r requirements-workload.lock (line 7))
+#8 3.164   Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+#8 3.257 Collecting brotli==1.2.0 (from -r requirements-workload.lock (line 11))
+#8 3.288   Downloading brotli-1.2.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.4 MB)
+#8 3.460      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 14.6 MB/s eta 0:00:00
+#8 3.507 Collecting certifi==2026.7.22 (from -r requirements-workload.lock (line 24))
+#8 3.540   Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+#8 3.746 Collecting charset-normalizer==3.5.1 (from -r requirements-workload.lock (line 47))
+#8 3.784   Downloading charset_normalizer-3.5.1-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (248 kB)
+#8 3.840 Collecting click==8.5.0 (from -r requirements-workload.lock (line 83))
+#8 3.870   Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#8 3.913 Collecting configargparse==1.7.6 (from -r requirements-workload.lock (line 91))
+#8 3.979   Downloading configargparse-1.7.6-py3-none-any.whl (33 kB)
+#8 4.027 Collecting flask==3.1.3 (from -r requirements-workload.lock (line 95))
+#8 4.057   Downloading flask-3.1.3-py3-none-any.whl (103 kB)
+#8 4.107 Collecting flask-cors==6.0.5 (from -r requirements-workload.lock (line 102))
+#8 4.139   Downloading flask_cors-6.0.5-py3-none-any.whl (16 kB)
+#8 4.184 Collecting flask-login==0.6.3 (from -r requirements-workload.lock (line 106))
+#8 4.217   Downloading Flask_Login-0.6.3-py3-none-any.whl (17 kB)
+#8 4.389 Collecting gevent==26.8.0 (from -r requirements-workload.lock (line 110))
+#8 4.420   Downloading gevent-26.8.0-cp312-cp312-manylinux_2_28_x86_64.whl (2.1 MB)
+#8 4.569      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 14.5 MB/s eta 0:00:00
+#8 4.784 Collecting geventhttpclient==2.3.9 (from -r requirements-workload.lock (line 124))
+#8 4.817   Downloading geventhttpclient-2.3.9-cp312-cp312-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (115 kB)
+#8 5.041 Collecting greenlet==3.5.5 (from -r requirements-workload.lock (line 138))
+#8 5.073   Downloading greenlet-3.5.5-cp312-cp312-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (621 kB)
+#8 5.108      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 621.4/621.4 kB 17.9 MB/s eta 0:00:00
+#8 5.145 Collecting h11==0.16.0 (from -r requirements-workload.lock (line 151))
+#8 5.176   Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#8 5.216 Collecting idna==3.19 (from -r requirements-workload.lock (line 155))
+#8 5.251   Downloading idna-3.19-py3-none-any.whl (68 kB)
+#8 5.289 Collecting iniconfig==2.3.0 (from -r requirements-workload.lock (line 159))
+#8 5.319   Downloading iniconfig-2.3.0-py3-none-any.whl (7.5 kB)
+#8 5.355 Collecting itsdangerous==2.2.0 (from -r requirements-workload.lock (line 163))
+#8 5.387   Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+#8 5.429 Collecting jinja2==3.1.6 (from -r requirements-workload.lock (line 167))
+#8 5.460   Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+#8 5.668 Collecting locust==2.46.4 (from -r requirements-workload.lock (line 171))
+#8 5.701   Downloading locust-2.46.4-py3-none-any.whl (1.5 MB)
+#8 5.775      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 20.7 MB/s eta 0:00:00
+#8 5.864 Collecting markupsafe==3.0.3 (from -r requirements-workload.lock (line 174))
+#8 5.896   Downloading markupsafe-3.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+#8 5.997 Collecting msgpack==1.2.2 (from -r requirements-workload.lock (line 191))
+#8 6.027   Downloading msgpack-1.2.2-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (420 kB)
+#8 6.112 Collecting packaging==26.3 (from -r requirements-workload.lock (line 205))
+#8 6.145   Downloading packaging-26.3-py3-none-any.whl (129 kB)
+#8 6.185 Collecting pluggy==1.6.0 (from -r requirements-workload.lock (line 209))
+#8 6.218   Downloading pluggy-1.6.0-py3-none-any.whl (20 kB)
+#8 6.319 Collecting psutil==7.2.2 (from -r requirements-workload.lock (line 213))
+#8 6.350   Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+#8 6.409 Collecting pygments==2.21.0 (from -r requirements-workload.lock (line 228))
+#8 6.442   Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+#8 6.620      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 6.2 MB/s eta 0:00:00
+#8 6.684 Collecting pytest==9.1.1 (from -r requirements-workload.lock (line 232))
+#8 6.716   Downloading pytest-9.1.1-py3-none-any.whl (386 kB)
+#8 6.800 Collecting python-engineio==4.14.0 (from -r requirements-workload.lock (line 236))
+#8 6.838   Downloading python_engineio-4.14.0-py3-none-any.whl (60 kB)
+#8 6.887 Collecting python-socketio==5.16.4 (from -r requirements-workload.lock (line 242))
+#8 6.918   Downloading python_socketio-5.16.4-py3-none-any.whl (82 kB)
+#8 7.433 Collecting pyzmq==27.2.0 (from -r requirements-workload.lock (line 251))
+#8 7.472   Downloading pyzmq-27.2.0-cp312-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (872 kB)
+#8 7.521      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 872.3/872.3 kB 19.5 MB/s eta 0:00:00
+#8 7.575 Collecting requests==2.34.2 (from -r requirements-workload.lock (line 265))
+#8 7.607   Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+#8 7.649 Collecting simple-websocket==1.1.0 (from -r requirements-workload.lock (line 271))
+#8 7.681   Downloading simple_websocket-1.1.0-py3-none-any.whl (13 kB)
+#8 7.733 Collecting urllib3==2.3.0 (from -r requirements-workload.lock (line 275))
+#8 7.766   Downloading urllib3-2.3.0-py3-none-any.whl (128 kB)
+#8 7.827 Collecting websocket-client==1.9.2 (from -r requirements-workload.lock (line 281))
+#8 7.859   Downloading websocket_client-1.9.2-py3-none-any.whl (95 kB)
+#8 7.932 Collecting werkzeug==3.1.8 (from -r requirements-workload.lock (line 285))
+#8 7.967   Downloading werkzeug-3.1.8-py3-none-any.whl (226 kB)
+#8 8.017 Collecting wsproto==1.3.2 (from -r requirements-workload.lock (line 293))
+#8 8.051   Downloading wsproto-1.3.2-py3-none-any.whl (24 kB)
+#8 8.092 Collecting zope-event==6.2 (from -r requirements-workload.lock (line 297))
+#8 8.123   Downloading zope_event-6.2-py3-none-any.whl (6.5 kB)
+#8 8.291 Collecting zope-interface==8.6 (from -r requirements-workload.lock (line 301))
+#8 8.324   Downloading zope_interface-8.6-cp312-cp312-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl (270 kB)
+#8 8.642 Installing collected packages: brotli, zope-interface, zope-event, websocket-client, urllib3, pyzmq, pygments, psutil, pluggy, packaging, msgpack, markupsafe, itsdangerous, iniconfig, idna, h11, greenlet, configargparse, click, charset-normalizer, certifi, blinker, bidict, wsproto, werkzeug, requests, pytest, jinja2, gevent, simple-websocket, geventhttpclient, flask, python-engineio, flask-login, flask-cors, python-socketio, locust
+#8 14.10 Successfully installed bidict-0.24.1 blinker-1.9.0 brotli-1.2.0 certifi-2026.7.22 charset-normalizer-3.5.1 click-8.5.0 configargparse-1.7.6 flask-3.1.3 flask-cors-6.0.5 flask-login-0.6.3 gevent-26.8.0 geventhttpclient-2.3.9 greenlet-3.5.5 h11-0.16.0 idna-3.19 iniconfig-2.3.0 itsdangerous-2.2.0 jinja2-3.1.6 locust-2.46.4 markupsafe-3.0.3 msgpack-1.2.2 packaging-26.3 pluggy-1.6.0 psutil-7.2.2 pygments-2.21.0 pytest-9.1.1 python-engineio-4.14.0 python-socketio-5.16.4 pyzmq-27.2.0 requests-2.34.2 simple-websocket-1.1.0 urllib3-2.3.0 websocket-client-1.9.2 werkzeug-3.1.8 wsproto-1.3.2 zope-event-6.2 zope-interface-8.6
+#8 14.10 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#8 14.34 
+#8 14.34 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+#8 14.34 [notice] To update, run: pip install --upgrade pip
+#8 DONE 14.8s
+
+#9 [5/5] COPY workload /srv/workload
+#9 DONE 0.1s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 2.9s done
+#10 exporting manifest sha256:c736a0bc6599233970fec6bf7dfe41b188ce6c54fa6cc032b03d2b7f21796a0b 0.0s done
+#10 exporting config sha256:10fb7632463d409d2835d78611e272480859a8062af835b2d999f79ae658f765 0.0s done
+#10 exporting attestation manifest sha256:11344ec70ef5f2627e97a17e56491b9df6113ef76de0b1fa4cd0f5608e869b6a 0.0s done
+#10 exporting manifest list sha256:f47f8d84f74f5c222105b250dd4d5d6330fd42e3f158bdbde967ba47772dd534 0.0s done
+#10 naming to docker.io/library/kavach-workload:dev
+#10 naming to docker.io/library/kavach-workload:dev done
+#10 unpacking to docker.io/library/kavach-workload:dev
+#10 unpacking to docker.io/library/kavach-workload:dev 2.0s done
+#10 DONE 5.1s
