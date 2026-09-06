@@ -57,7 +57,7 @@ class TraceReplay(HttpUser):
                 raise RuntimeError("Destination is not the synthetic fixture")
         self.config = validate_config(json.loads(Path("/config/scenario.json").read_text()))
         self.trace = compile_trace(self.config)
-        self.group = Group()
+        self.pending_requests = Group()
 
     def issue(self, event, output, started, lag):
         user = f"synthetic-user-{event['user']}"
@@ -122,7 +122,7 @@ class TraceReplay(HttpUser):
                 )
                 now = time.monotonic()
                 lag = now - due
-                if lag > 0.1 or len(self.group) >= 200:
+                if lag > 0.1 or len(self.pending_requests) >= 200:
                     dropped += 1
                     output.write(
                         json.dumps(
@@ -137,8 +137,8 @@ class TraceReplay(HttpUser):
                     )
                     continue
                 previous = now
-                self.group.spawn(self.issue, event, output, started, lag)
-            self.group.join(timeout=10, raise_error=True)
+                self.pending_requests.spawn(self.issue, event, output, started, lag)
+            self.pending_requests.join(timeout=10, raise_error=True)
         Path("/data/replay.json").write_text(
             json.dumps(
                 {
@@ -147,7 +147,7 @@ class TraceReplay(HttpUser):
                     "dropped": dropped,
                     "start_utc": started,
                     "end_utc": time.time(),
-                    "generator_valid": dropped == 0 and not self.group,
+                    "generator_valid": dropped == 0 and not self.pending_requests,
                     "request_rate_ceiling": self.config["max_rps"],
                 },
                 indent=2,
