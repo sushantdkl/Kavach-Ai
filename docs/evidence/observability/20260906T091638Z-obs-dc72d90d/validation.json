@@ -1,0 +1,25 @@
+{
+  "status": "INVALID",
+  "sample_count": 15,
+  "expected_samples": 15,
+  "reasons": [
+    "row:2:stale_or_future:cpu_source_timestamp",
+    "row:2:stale_or_future:memory_source_timestamp",
+    "row:3:stale_or_future:cpu_source_timestamp",
+    "row:3:stale_or_future:memory_source_timestamp",
+    "row:4:missing_or_invalid:cpu_usage_cores",
+    "row:4:stale_or_future:cpu_source_timestamp",
+    "row:4:stale_or_future:memory_source_timestamp",
+    "row:5:missing_or_invalid:cpu_usage_cores",
+    "row:5:stale_or_future:cpu_source_timestamp",
+    "row:5:stale_or_future:memory_source_timestamp",
+    "row:9:stale_or_future:cpu_source_timestamp",
+    "row:9:stale_or_future:memory_source_timestamp",
+    "row:10:stale_or_future:cpu_source_timestamp",
+    "row:10:stale_or_future:memory_source_timestamp",
+    "row:11:stale_or_future:cpu_source_timestamp",
+    "row:11:stale_or_future:memory_source_timestamp",
+    "row:12:stale_or_future:cpu_source_timestamp",
+    "row:12:stale_or_future:memory_source_timestamp"
+  ]
+}

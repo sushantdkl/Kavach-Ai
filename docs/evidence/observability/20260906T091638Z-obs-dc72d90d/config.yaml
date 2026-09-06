@@ -1,0 +1,28 @@
+duration_s: 30
+interval_s: 2
+prometheus: http://127.0.0.1:9090
+queries:
+  app_source_timestamp: min(timestamp(kavach_requests_total{job="payment-api"}))
+  app_targets_count: count(up{job="payment-api"})
+  app_targets_up: sum(up{job="payment-api"})
+  cadvisor_up: min(up{job="cadvisor"})
+  cpu_source_timestamp: min(timestamp(container_cpu_usage_seconds_total{namespace="kavach-lab",container="api"}))
+  cpu_usage_cores: sum(rate(container_cpu_usage_seconds_total{namespace="kavach-lab",container="api"}[30s]))
+  current_rps: sum(rate(kavach_requests_total{job="payment-api"}[10s]))
+  error_rps: sum(rate(kavach_requests_total{job="payment-api",status=~"4..|5.."}[10s]))
+    or vector(0)
+  latency_mean_ms: 1000 * sum(rate(kavach_request_duration_seconds_sum{job="payment-api"}[10s]))
+    / sum(rate(kavach_request_duration_seconds_count{job="payment-api"}[10s]))
+  latency_p50_ms: 1000 * histogram_quantile(0.5, sum by(le)(rate(kavach_request_duration_seconds_bucket{job="payment-api"}[10s])))
+  latency_p95_ms: 1000 * histogram_quantile(0.95, sum by(le)(rate(kavach_request_duration_seconds_bucket{job="payment-api"}[10s])))
+  latency_p99_ms: 1000 * histogram_quantile(0.99, sum by(le)(rate(kavach_request_duration_seconds_bucket{job="payment-api"}[10s])))
+  memory_bytes: sum(container_memory_working_set_bytes{namespace="kavach-lab",container="api"})
+  memory_source_timestamp: min(timestamp(container_memory_working_set_bytes{namespace="kavach-lab",container="api"}))
+  success_rps: sum(rate(kavach_requests_total{job="payment-api",status=~"2..|3.."}[10s]))
+    or vector(0)
+research_eligible: false
+scenario: observability-smoke
+seed: 240005
+slo_error_fraction: 0.01
+slo_p95_ms: 300
+strategy: STATIC

@@ -20,3 +20,19 @@ data belongs under experiments/raw/<unique_run_id>/ and is never overwritten.
 - Smoke metadata truthfully records a dirty documentation/evidence working tree;
   API source corresponds to commit 181e20a. Future research runs must use a
   clean experiment source tree and record cluster image IDs in run metadata.
+## Phase 2 observability gate — passed 2026-09-06
+
+- Prometheus application and cAdvisor targets healthy; metrics-server returns
+  pod CPU/memory; Grafana ready with provisioned datasource.
+- First unit test run: one missing-duration validation path raised TypeError;
+  fixed the null handling and retained the failure log. All 48 tests now pass.
+- First observation dc72d90d INVALID: cached kubelet CPU/memory timestamps too
+  old and CPU windows sometimes empty. Fixed at source with fresh own-cgroup
+  counters (D006), not by widening the freshness acceptance threshold.
+- Observation 3f4ee284 INVALID: no initialized business counters after replacing
+  the pod; the old port-forward was stale. Related smoke ebc7c06e also INVALID.
+- Observation 28b279b0 PASS: 15/15 samples over 30s at 2s cadence, real traffic,
+  latency, CPU/memory, replicas, restarts, pod snapshots and event stream complete.
+  Parquet readback confirmed 15 rows. Every invalid artifact is retained.
+- All observations are engineering-only and explicitly research-ineligible;
+  Locust offered-load data and comparative baseline evidence are still pending.

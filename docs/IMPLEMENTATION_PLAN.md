@@ -7,8 +7,8 @@ needs measured evidence and a commit. Never infer gate success from file presenc
 |---|---|---|
 | 0 Research freeze | Preserve input docs, RQ/H, source audit, ethics, decisions | Method frozen; literature audit tracked separately |
 | 1 Testbed | Tested synthetic API, reproducible image, isolated Kubernetes, fixed-load smoke | PASS: 25 tests; smoke 20260906T090923Z-f71dab03 |
-| 2 Observability | Prometheus, metrics-server, Grafana, complete synchronized streams | In progress |
-| 3 Baselines | Seeded trace replay, capacity/readiness calibration, repeated Static/tuned HPA runs | Pending phase 2 |
+| 2 Observability | Prometheus, metrics-server, Grafana, complete synchronized streams | PASS: 48 tests; observation 20260906T092055Z-obs-28b279b0 |
+| 3 Baselines | Seeded trace replay, capacity/readiness calibration, repeated Static/tuned HPA runs | In progress |
 | 4 Dataset | Immutable run artifacts, coverage validation, run-level chronological partitions | Pending phase 3 |
 | 5 Forecast | Last-value/EWMA/RF/XGB at 5/10/15/30s; unseen-run evaluation | Pending phase 4 |
 | 6 Pattern | Engineered features, classifier, per-class reports and failures | Pending phase 5 |

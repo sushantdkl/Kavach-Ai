@@ -1,0 +1,33 @@
+{
+  "run_id": "20260906T092007Z-obs-3f4ee284",
+  "git_commit": "b0337e73666fbbb31d41bb733b8d02d980614f50",
+  "config_hash": "8349bce27cbfbb53df4f3a1decd8de9230312c6339c8d883ef256641d8ae0494",
+  "strategy": "STATIC",
+  "scenario": "observability-smoke",
+  "seed": 240005,
+  "start_utc": "2026-09-06T09:20:07.929760+00:00",
+  "image_digest": [
+    "sha256:3e6f7f8ec331576b201ea9494092dfcb6a0444eeafa9b146aa6b678495e07654"
+  ],
+  "kubernetes_version": {
+    "build_date": "2025-08-27T10:09:04Z",
+    "compiler": "gc",
+    "emulation_major": "1",
+    "emulation_minor": "34",
+    "git_commit": "f28b4c9efbca5c5c0af716d9f2d5702667ee8a45",
+    "git_tree_state": "clean",
+    "git_version": "v1.34.0",
+    "go_version": "go1.24.6",
+    "major": "1",
+    "min_compatibility_major": "1",
+    "min_compatibility_minor": "33",
+    "minor": "34",
+    "platform": "linux/amd64"
+  },
+  "host": "Windows-11-10.0.26100-SP0",
+  "raw_metric_path": "docs\\evidence\\observability\\20260906T092007Z-obs-3f4ee284\\metrics.parquet",
+  "validity_status": "INVALID",
+  "research_eligible": false,
+  "reason": "engineering observation; no Locust workload artifact yet",
+  "end_utc": "2026-09-06T09:20:36.117870+00:00"
+}

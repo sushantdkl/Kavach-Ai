@@ -1,0 +1,110 @@
+# HELP kavach_container_cpu_seconds_total Own cgroup v2 cumulative CPU seconds
+# TYPE kavach_container_cpu_seconds_total counter
+kavach_container_cpu_seconds_total 6.227634
+# HELP kavach_container_memory_working_set_bytes Own cgroup memory.current minus inactive_file
+# TYPE kavach_container_memory_working_set_bytes gauge
+kavach_container_memory_working_set_bytes 3.936256e+07
+# HELP kavach_container_sample_timestamp_seconds UTC time of cgroup read
+# TYPE kavach_container_sample_timestamp_seconds gauge
+kavach_container_sample_timestamp_seconds 1.7886865342593477e+09
+# HELP kavach_requests_total Completed business requests
+# TYPE kavach_requests_total counter
+kavach_requests_total{method="POST",route="/auth/login",status="200"} 181.0
+kavach_requests_total{method="POST",route="/payments/initiate",status="200"} 180.0
+kavach_requests_total{method="GET",route="/wallet/balance",status="200"} 179.0
+kavach_requests_total{method="POST",route="/payments/confirm",status="200"} 179.0
+kavach_requests_total{method="GET",route="/transactions/{id}",status="200"} 179.0
+# HELP kavach_requests_created Completed business requests
+# TYPE kavach_requests_created gauge
+kavach_requests_created{method="POST",route="/auth/login",status="200"} 1.788686444069957e+09
+kavach_requests_created{method="POST",route="/payments/initiate",status="200"} 1.788686444165135e+09
+kavach_requests_created{method="GET",route="/wallet/balance",status="200"} 1.7886864443703694e+09
+kavach_requests_created{method="POST",route="/payments/confirm",status="200"} 1.7886864445682118e+09
+kavach_requests_created{method="GET",route="/transactions/{id}",status="200"} 1.7886864446678574e+09
+# HELP kavach_request_duration_seconds Business request latency
+# TYPE kavach_request_duration_seconds histogram
+kavach_request_duration_seconds_bucket{le="0.005",method="POST",route="/auth/login"} 162.0
+kavach_request_duration_seconds_bucket{le="0.01",method="POST",route="/auth/login"} 181.0
+kavach_request_duration_seconds_bucket{le="0.025",method="POST",route="/auth/login"} 181.0
+kavach_request_duration_seconds_bucket{le="0.05",method="POST",route="/auth/login"} 181.0
+kavach_request_duration_seconds_bucket{le="0.1",method="POST",route="/auth/login"} 181.0
+kavach_request_duration_seconds_bucket{le="0.2",method="POST",route="/auth/login"} 181.0
+kavach_request_duration_seconds_bucket{le="0.3",method="POST",route="/auth/login"} 181.0
+kavach_request_duration_seconds_bucket{le="0.5",method="POST",route="/auth/login"} 181.0
+kavach_request_duration_seconds_bucket{le="1.0",method="POST",route="/auth/login"} 181.0
+kavach_request_duration_seconds_bucket{le="2.0",method="POST",route="/auth/login"} 181.0
+kavach_request_duration_seconds_bucket{le="5.0",method="POST",route="/auth/login"} 181.0
+kavach_request_duration_seconds_bucket{le="10.0",method="POST",route="/auth/login"} 181.0
+kavach_request_duration_seconds_bucket{le="+Inf",method="POST",route="/auth/login"} 181.0
+kavach_request_duration_seconds_count{method="POST",route="/auth/login"} 181.0
+kavach_request_duration_seconds_sum{method="POST",route="/auth/login"} 0.8305207910002537
+kavach_request_duration_seconds_bucket{le="0.005",method="POST",route="/payments/initiate"} 147.0
+kavach_request_duration_seconds_bucket{le="0.01",method="POST",route="/payments/initiate"} 180.0
+kavach_request_duration_seconds_bucket{le="0.025",method="POST",route="/payments/initiate"} 180.0
+kavach_request_duration_seconds_bucket{le="0.05",method="POST",route="/payments/initiate"} 180.0
+kavach_request_duration_seconds_bucket{le="0.1",method="POST",route="/payments/initiate"} 180.0
+kavach_request_duration_seconds_bucket{le="0.2",method="POST",route="/payments/initiate"} 180.0
+kavach_request_duration_seconds_bucket{le="0.3",method="POST",route="/payments/initiate"} 180.0
+kavach_request_duration_seconds_bucket{le="0.5",method="POST",route="/payments/initiate"} 180.0
+kavach_request_duration_seconds_bucket{le="1.0",method="POST",route="/payments/initiate"} 180.0
+kavach_request_duration_seconds_bucket{le="2.0",method="POST",route="/payments/initiate"} 180.0
+kavach_request_duration_seconds_bucket{le="5.0",method="POST",route="/payments/initiate"} 180.0
+kavach_request_duration_seconds_bucket{le="10.0",method="POST",route="/payments/initiate"} 180.0
+kavach_request_duration_seconds_bucket{le="+Inf",method="POST",route="/payments/initiate"} 180.0
+kavach_request_duration_seconds_count{method="POST",route="/payments/initiate"} 180.0
+kavach_request_duration_seconds_sum{method="POST",route="/payments/initiate"} 0.8507714290008153
+kavach_request_duration_seconds_bucket{le="0.005",method="GET",route="/wallet/balance"} 174.0
+kavach_request_duration_seconds_bucket{le="0.01",method="GET",route="/wallet/balance"} 179.0
+kavach_request_duration_seconds_bucket{le="0.025",method="GET",route="/wallet/balance"} 179.0
+kavach_request_duration_seconds_bucket{le="0.05",method="GET",route="/wallet/balance"} 179.0
+kavach_request_duration_seconds_bucket{le="0.1",method="GET",route="/wallet/balance"} 179.0
+kavach_request_duration_seconds_bucket{le="0.2",method="GET",route="/wallet/balance"} 179.0
+kavach_request_duration_seconds_bucket{le="0.3",method="GET",route="/wallet/balance"} 179.0
+kavach_request_duration_seconds_bucket{le="0.5",method="GET",route="/wallet/balance"} 179.0
+kavach_request_duration_seconds_bucket{le="1.0",method="GET",route="/wallet/balance"} 179.0
+kavach_request_duration_seconds_bucket{le="2.0",method="GET",route="/wallet/balance"} 179.0
+kavach_request_duration_seconds_bucket{le="5.0",method="GET",route="/wallet/balance"} 179.0
+kavach_request_duration_seconds_bucket{le="10.0",method="GET",route="/wallet/balance"} 179.0
+kavach_request_duration_seconds_bucket{le="+Inf",method="GET",route="/wallet/balance"} 179.0
+kavach_request_duration_seconds_count{method="GET",route="/wallet/balance"} 179.0
+kavach_request_duration_seconds_sum{method="GET",route="/wallet/balance"} 0.75972225000055
+kavach_request_duration_seconds_bucket{le="0.005",method="POST",route="/payments/confirm"} 150.0
+kavach_request_duration_seconds_bucket{le="0.01",method="POST",route="/payments/confirm"} 179.0
+kavach_request_duration_seconds_bucket{le="0.025",method="POST",route="/payments/confirm"} 179.0
+kavach_request_duration_seconds_bucket{le="0.05",method="POST",route="/payments/confirm"} 179.0
+kavach_request_duration_seconds_bucket{le="0.1",method="POST",route="/payments/confirm"} 179.0
+kavach_request_duration_seconds_bucket{le="0.2",method="POST",route="/payments/confirm"} 179.0
+kavach_request_duration_seconds_bucket{le="0.3",method="POST",route="/payments/confirm"} 179.0
+kavach_request_duration_seconds_bucket{le="0.5",method="POST",route="/payments/confirm"} 179.0
+kavach_request_duration_seconds_bucket{le="1.0",method="POST",route="/payments/confirm"} 179.0
+kavach_request_duration_seconds_bucket{le="2.0",method="POST",route="/payments/confirm"} 179.0
+kavach_request_duration_seconds_bucket{le="5.0",method="POST",route="/payments/confirm"} 179.0
+kavach_request_duration_seconds_bucket{le="10.0",method="POST",route="/payments/confirm"} 179.0
+kavach_request_duration_seconds_bucket{le="+Inf",method="POST",route="/payments/confirm"} 179.0
+kavach_request_duration_seconds_count{method="POST",route="/payments/confirm"} 179.0
+kavach_request_duration_seconds_sum{method="POST",route="/payments/confirm"} 0.8399053780030954
+kavach_request_duration_seconds_bucket{le="0.005",method="GET",route="/transactions/{id}"} 170.0
+kavach_request_duration_seconds_bucket{le="0.01",method="GET",route="/transactions/{id}"} 178.0
+kavach_request_duration_seconds_bucket{le="0.025",method="GET",route="/transactions/{id}"} 178.0
+kavach_request_duration_seconds_bucket{le="0.05",method="GET",route="/transactions/{id}"} 178.0
+kavach_request_duration_seconds_bucket{le="0.1",method="GET",route="/transactions/{id}"} 178.0
+kavach_request_duration_seconds_bucket{le="0.2",method="GET",route="/transactions/{id}"} 179.0
+kavach_request_duration_seconds_bucket{le="0.3",method="GET",route="/transactions/{id}"} 179.0
+kavach_request_duration_seconds_bucket{le="0.5",method="GET",route="/transactions/{id}"} 179.0
+kavach_request_duration_seconds_bucket{le="1.0",method="GET",route="/transactions/{id}"} 179.0
+kavach_request_duration_seconds_bucket{le="2.0",method="GET",route="/transactions/{id}"} 179.0
+kavach_request_duration_seconds_bucket{le="5.0",method="GET",route="/transactions/{id}"} 179.0
+kavach_request_duration_seconds_bucket{le="10.0",method="GET",route="/transactions/{id}"} 179.0
+kavach_request_duration_seconds_bucket{le="+Inf",method="GET",route="/transactions/{id}"} 179.0
+kavach_request_duration_seconds_count{method="GET",route="/transactions/{id}"} 179.0
+kavach_request_duration_seconds_sum{method="GET",route="/transactions/{id}"} 0.8986301869999807
+# HELP kavach_request_duration_seconds_created Business request latency
+# TYPE kavach_request_duration_seconds_created gauge
+kavach_request_duration_seconds_created{method="POST",route="/auth/login"} 1.78868644407001e+09
+kavach_request_duration_seconds_created{method="POST",route="/payments/initiate"} 1.7886864441651614e+09
+kavach_request_duration_seconds_created{method="GET",route="/wallet/balance"} 1.7886864443704073e+09
+kavach_request_duration_seconds_created{method="POST",route="/payments/confirm"} 1.7886864445682392e+09
+kavach_request_duration_seconds_created{method="GET",route="/transactions/{id}"} 1.7886864446679304e+09
+# HELP kavach_in_flight_requests Business requests in progress
+# TYPE kavach_in_flight_requests gauge
+kavach_in_flight_requests 0.0

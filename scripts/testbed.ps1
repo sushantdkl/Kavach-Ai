@@ -19,6 +19,8 @@ switch ($Action) {
     }
     'deploy' {
         Invoke-Checked kubectl @('--kubeconfig',$KavachConfig,'--context','kind-kavach-lab','apply','-k','infrastructure/k8s/base')
+        # The development tag can be rebuilt; ensure existing pods consume it.
+        Invoke-Checked kubectl @('--kubeconfig',$KavachConfig,'--context','kind-kavach-lab','-n','kavach-lab','rollout','restart','deployment/payment-api')
         Invoke-Checked kubectl @('--kubeconfig',$KavachConfig,'--context','kind-kavach-lab','-n','kavach-lab','rollout','status','deployment/payment-api','--timeout=120s')
     }
     'status' {

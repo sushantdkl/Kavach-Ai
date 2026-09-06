@@ -40,3 +40,22 @@ Smoke output is uniquely named and is not research comparison data.
 
 Do not reuse unrelated clusters. Every project kubectl command uses the local
 kubeconfig and `kind-kavach-lab` context. No public Service or ingress is created.
+
+## Observability
+
+```powershell
+./scripts/monitoring.ps1
+kubectl --kubeconfig infrastructure/kubeconfig --context kind-kavach-lab -n kavach-lab port-forward --address 127.0.0.1 service/prometheus 9090:9090
+# Separate terminal; run smoke traffic first and allow a 10-second metric warm-up:
+uv run python -m collector.collect --duration 30
+```
+
+The collector writes Parquet, CSV, append-only sample/snapshot/event JSONL,
+configuration, metadata and validation to a unique directory. Its current mode
+is an engineering observation, explicitly ineligible for final research.
+See [observability details](docs/OBSERVABILITY.md) for sample freshness and units.
+
+Grafana can be opened through a loopback port-forward on 3001 to Service port
+3000. It has a provisioned real Prometheus datasource; the custom research
+dashboard belongs to phase 10. After replacing an API pod, restart its
+port-forward before running host smoke traffic.
