@@ -1,0 +1,6 @@
+*
+!requirements-api.lock
+!payment-api/
+!payment-api/app/
+!payment-api/app/*.py
+!payment-api/Dockerfile

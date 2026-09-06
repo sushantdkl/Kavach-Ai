@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: payment-config
+data:
+  KAVACH_CPU_WORK_FACTOR: "2000"
+  KAVACH_IO_DELAY_MS: "2"
+  KAVACH_ERROR_INJECTION_RATE: "0"
+  KAVACH_SEED: "240005"
+  KAVACH_DB_ENABLED: "false"
