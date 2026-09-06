@@ -1,0 +1,123 @@
+#0 building with "desktop-linux" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 525B 0.0s done
+#1 DONE 0.1s
+
+#2 [internal] load metadata for docker.io/library/python:3.12.12-slim-bookworm
+#2 DONE 4.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 143B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 28.77kB 0.0s done
+#4 DONE 0.1s
+
+#5 [1/5] FROM docker.io/library/python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c
+#5 resolve docker.io/library/python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c 0.0s done
+#5 DONE 0.2s
+
+#5 [1/5] FROM docker.io/library/python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c
+#5 sha256:dbeb2af0e7bd53c2dff6896f9bde583874dc48fbb85d8cda0e9040dec5424ca8 0B / 249B 0.2s
+#5 sha256:f9f25941dc135427be9d16894ce71a921adff16e2d43060139ed05c33fcd668e 0B / 13.67MB 0.2s
+#5 sha256:2e8ff2a71e9573673dd17ca594722bd27eed7eb917debc0fb74ff9eb5d522ad1 0B / 3.52MB 0.2s
+#5 sha256:84a2afebaf4de2e8eb885634a69abd0087b79c947c53fa4f0481235d6dfadc6c 0B / 28.24MB 0.2s
+#5 sha256:dbeb2af0e7bd53c2dff6896f9bde583874dc48fbb85d8cda0e9040dec5424ca8 249B / 249B 0.3s done
+#5 sha256:f9f25941dc135427be9d16894ce71a921adff16e2d43060139ed05c33fcd668e 1.05MB / 13.67MB 0.9s
+#5 sha256:f9f25941dc135427be9d16894ce71a921adff16e2d43060139ed05c33fcd668e 4.19MB / 13.67MB 1.1s
+#5 sha256:f9f25941dc135427be9d16894ce71a921adff16e2d43060139ed05c33fcd668e 7.34MB / 13.67MB 1.2s
+#5 sha256:f9f25941dc135427be9d16894ce71a921adff16e2d43060139ed05c33fcd668e 10.49MB / 13.67MB 1.4s
+#5 sha256:f9f25941dc135427be9d16894ce71a921adff16e2d43060139ed05c33fcd668e 11.53MB / 13.67MB 1.5s
+#5 sha256:f9f25941dc135427be9d16894ce71a921adff16e2d43060139ed05c33fcd668e 12.58MB / 13.67MB 1.7s
+#5 sha256:2e8ff2a71e9573673dd17ca594722bd27eed7eb917debc0fb74ff9eb5d522ad1 1.05MB / 3.52MB 1.5s
+#5 sha256:f9f25941dc135427be9d16894ce71a921adff16e2d43060139ed05c33fcd668e 13.67MB / 13.67MB 1.7s done
+#5 sha256:2e8ff2a71e9573673dd17ca594722bd27eed7eb917debc0fb74ff9eb5d522ad1 3.52MB / 3.52MB 1.8s done
+#5 sha256:84a2afebaf4de2e8eb885634a69abd0087b79c947c53fa4f0481235d6dfadc6c 2.10MB / 28.24MB 1.7s
+#5 sha256:84a2afebaf4de2e8eb885634a69abd0087b79c947c53fa4f0481235d6dfadc6c 7.34MB / 28.24MB 2.0s
+#5 sha256:84a2afebaf4de2e8eb885634a69abd0087b79c947c53fa4f0481235d6dfadc6c 9.44MB / 28.24MB 2.1s
+#5 sha256:84a2afebaf4de2e8eb885634a69abd0087b79c947c53fa4f0481235d6dfadc6c 12.58MB / 28.24MB 2.3s
+#5 sha256:84a2afebaf4de2e8eb885634a69abd0087b79c947c53fa4f0481235d6dfadc6c 14.68MB / 28.24MB 2.4s
+#5 sha256:84a2afebaf4de2e8eb885634a69abd0087b79c947c53fa4f0481235d6dfadc6c 17.83MB / 28.24MB 2.6s
+#5 sha256:84a2afebaf4de2e8eb885634a69abd0087b79c947c53fa4f0481235d6dfadc6c 20.97MB / 28.24MB 2.7s
+#5 sha256:84a2afebaf4de2e8eb885634a69abd0087b79c947c53fa4f0481235d6dfadc6c 24.12MB / 28.24MB 2.9s
+#5 sha256:84a2afebaf4de2e8eb885634a69abd0087b79c947c53fa4f0481235d6dfadc6c 27.26MB / 28.24MB 3.0s
+#5 sha256:84a2afebaf4de2e8eb885634a69abd0087b79c947c53fa4f0481235d6dfadc6c 28.24MB / 28.24MB 3.1s done
+#5 extracting sha256:84a2afebaf4de2e8eb885634a69abd0087b79c947c53fa4f0481235d6dfadc6c
+#5 extracting sha256:84a2afebaf4de2e8eb885634a69abd0087b79c947c53fa4f0481235d6dfadc6c 3.5s done
+#5 DONE 6.8s
+
+#5 [1/5] FROM docker.io/library/python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c
+#5 extracting sha256:2e8ff2a71e9573673dd17ca594722bd27eed7eb917debc0fb74ff9eb5d522ad1
+#5 extracting sha256:2e8ff2a71e9573673dd17ca594722bd27eed7eb917debc0fb74ff9eb5d522ad1 0.7s done
+#5 DONE 7.5s
+
+#5 [1/5] FROM docker.io/library/python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c
+#5 extracting sha256:f9f25941dc135427be9d16894ce71a921adff16e2d43060139ed05c33fcd668e
+#5 extracting sha256:f9f25941dc135427be9d16894ce71a921adff16e2d43060139ed05c33fcd668e 1.8s done
+#5 DONE 9.3s
+
+#5 [1/5] FROM docker.io/library/python:3.12.12-slim-bookworm@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c
+#5 extracting sha256:dbeb2af0e7bd53c2dff6896f9bde583874dc48fbb85d8cda0e9040dec5424ca8 0.0s done
+#5 DONE 9.3s
+
+#6 [2/5] WORKDIR /srv
+#6 DONE 6.3s
+
+#7 [3/5] COPY requirements-api.lock /srv/requirements-api.lock
+#7 DONE 1.0s
+
+#8 [4/5] RUN pip install --no-cache-dir --require-hashes -r requirements-api.lock     && groupadd --gid 10001 kavach && useradd --uid 10001 --gid 10001 --no-create-home kavach
+#8 5.357 Collecting annotated-doc==0.0.5 (from -r requirements-api.lock (line 3))
+#8 5.662   Downloading annotated_doc-0.0.5-py3-none-any.whl (5.3 kB)
+#8 5.763 Collecting annotated-types==0.8.0 (from -r requirements-api.lock (line 7))
+#8 5.860   Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+#8 6.007 Collecting anyio==4.15.1 (from -r requirements-api.lock (line 11))
+#8 6.071   Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+#8 6.271 Collecting click==8.5.0 (from -r requirements-api.lock (line 15))
+#8 6.315   Downloading click-8.5.0-py3-none-any.whl (125 kB)
+#8 6.693 Collecting fastapi==0.141.1 (from -r requirements-api.lock (line 19))
+#8 6.730   Downloading fastapi-0.141.1-py3-none-any.whl (131 kB)
+#8 6.895 Collecting h11==0.16.0 (from -r requirements-api.lock (line 23))
+#8 6.932   Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+#8 7.012 Collecting idna==3.19 (from -r requirements-api.lock (line 27))
+#8 7.065   Downloading idna-3.19-py3-none-any.whl (68 kB)
+#8 7.208 Collecting prometheus-client==0.26.0 (from -r requirements-api.lock (line 31))
+#8 7.244   Downloading prometheus_client-0.26.0-py3-none-any.whl (64 kB)
+#8 7.836 Collecting pydantic==2.13.5 (from -r requirements-api.lock (line 35))
+#8 7.871   Downloading pydantic-2.13.5-py3-none-any.whl (472 kB)
+#8 10.27 Collecting pydantic-core==2.46.5 (from -r requirements-api.lock (line 39))
+#8 10.33   Downloading pydantic_core-2.46.5-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+#8 10.75      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 5.9 MB/s eta 0:00:00
+#8 10.85 Collecting starlette==1.6.0 (from -r requirements-api.lock (line 61))
+#8 10.88   Downloading starlette-1.6.0-py3-none-any.whl (75 kB)
+#8 10.93 Collecting typing-extensions==4.16.0 (from -r requirements-api.lock (line 65))
+#8 10.97   Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+#8 11.01 Collecting typing-inspection==0.4.4 (from -r requirements-api.lock (line 75))
+#8 11.04   Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+#8 11.10 Collecting uvicorn==0.52.4 (from -r requirements-api.lock (line 81))
+#8 11.13   Downloading uvicorn-0.52.4-py3-none-any.whl (79 kB)
+#8 11.23 Installing collected packages: typing-extensions, prometheus-client, idna, h11, click, annotated-types, annotated-doc, uvicorn, typing-inspection, pydantic-core, anyio, starlette, pydantic, fastapi
+#8 20.42 Successfully installed annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 click-8.5.0 fastapi-0.141.1 h11-0.16.0 idna-3.19 prometheus-client-0.26.0 pydantic-2.13.5 pydantic-core-2.46.5 starlette-1.6.0 typing-extensions-4.16.0 typing-inspection-0.4.4 uvicorn-0.52.4
+#8 20.42 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+#8 20.65 
+#8 20.65 [notice] A new release of pip is available: 25.0.1 -> 26.2.1
+#8 20.65 [notice] To update, run: pip install --upgrade pip
+#8 DONE 38.1s
+
+#9 [5/5] COPY payment-api/app /srv/app
+#9 DONE 0.2s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 1.2s done
+#10 exporting manifest sha256:3395c39bd46f86b9e59226051d6fbb85ab29f36399e7ea43bce4398980d6493c 0.0s done
+#10 exporting config sha256:f0b18d017f30d67474bdb3ce48d3293b155c3c56c7b392cf3138cbc7ffc25a04 0.0s done
+#10 exporting attestation manifest sha256:eccc0dfe123783d1591ec7d4c25b04fd1e4b04786cf7f5e282a08aa11ac59c10 0.1s done
+#10 exporting manifest list sha256:02b2fad2759bed5148e5906cd89abc1a947f0c7158dd62dffec08269429e5bdf
+#10 exporting manifest list sha256:02b2fad2759bed5148e5906cd89abc1a947f0c7158dd62dffec08269429e5bdf 0.0s done
+#10 naming to docker.io/library/kavach-payment:dev done
+#10 unpacking to docker.io/library/kavach-payment:dev
+#10 unpacking to docker.io/library/kavach-payment:dev 1.0s done
+#10 DONE 2.5s

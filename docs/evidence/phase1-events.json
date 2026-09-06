@@ -1,0 +1,234 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-06T09:08:38Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "payment-api-5479566fc7-j4smc",
+                "namespace": "kavach-lab",
+                "resourceVersion": "610",
+                "uid": "a45ec3fa-3e2e-4db3-9e9a-a19b2238cdb4"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-06T09:08:38Z",
+            "message": "Successfully assigned kavach-lab/payment-api-5479566fc7-j4smc to kavach-lab-control-plane",
+            "metadata": {
+                "creationTimestamp": "2026-09-06T09:08:38Z",
+                "name": "payment-api-5479566fc7-j4smc.18d2b02f27a9ca1f",
+                "namespace": "kavach-lab",
+                "resourceVersion": "615",
+                "uid": "18e822e5-4a23-42f5-82ce-541cf82df098"
+            },
+            "reason": "Scheduled",
+            "reportingComponent": "default-scheduler",
+            "reportingInstance": "",
+            "source": {
+                "component": "default-scheduler"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-06T09:08:38Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{api}",
+                "kind": "Pod",
+                "name": "payment-api-5479566fc7-j4smc",
+                "namespace": "kavach-lab",
+                "resourceVersion": "612",
+                "uid": "a45ec3fa-3e2e-4db3-9e9a-a19b2238cdb4"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-06T09:08:38Z",
+            "message": "Container image \"kavach-payment:dev\" already present on machine",
+            "metadata": {
+                "creationTimestamp": "2026-09-06T09:08:38Z",
+                "name": "payment-api-5479566fc7-j4smc.18d2b02f35a5574a",
+                "namespace": "kavach-lab",
+                "resourceVersion": "622",
+                "uid": "bd04c40b-fac9-4d08-81dd-5d5646663752"
+            },
+            "reason": "Pulled",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "kavach-lab-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "kavach-lab-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-06T09:08:38Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{api}",
+                "kind": "Pod",
+                "name": "payment-api-5479566fc7-j4smc",
+                "namespace": "kavach-lab",
+                "resourceVersion": "612",
+                "uid": "a45ec3fa-3e2e-4db3-9e9a-a19b2238cdb4"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-06T09:08:38Z",
+            "message": "Created container: api",
+            "metadata": {
+                "creationTimestamp": "2026-09-06T09:08:38Z",
+                "name": "payment-api-5479566fc7-j4smc.18d2b02f382dc944",
+                "namespace": "kavach-lab",
+                "resourceVersion": "623",
+                "uid": "4bcd3925-4c60-47cf-be7f-bd262ce3853e"
+            },
+            "reason": "Created",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "kavach-lab-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "kavach-lab-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-06T09:08:39Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{api}",
+                "kind": "Pod",
+                "name": "payment-api-5479566fc7-j4smc",
+                "namespace": "kavach-lab",
+                "resourceVersion": "612",
+                "uid": "a45ec3fa-3e2e-4db3-9e9a-a19b2238cdb4"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-06T09:08:39Z",
+            "message": "Started container api",
+            "metadata": {
+                "creationTimestamp": "2026-09-06T09:08:39Z",
+                "name": "payment-api-5479566fc7-j4smc.18d2b02f42a122be",
+                "namespace": "kavach-lab",
+                "resourceVersion": "625",
+                "uid": "5ec687cb-e5e4-4105-a38c-980620ce7a22"
+            },
+            "reason": "Started",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "kavach-lab-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "kavach-lab-control-plane"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 2,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-06T09:08:39Z",
+            "involvedObject": {
+                "apiVersion": "v1",
+                "fieldPath": "spec.containers{api}",
+                "kind": "Pod",
+                "name": "payment-api-5479566fc7-j4smc",
+                "namespace": "kavach-lab",
+                "resourceVersion": "612",
+                "uid": "a45ec3fa-3e2e-4db3-9e9a-a19b2238cdb4"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-06T09:08:40Z",
+            "message": "Startup probe failed: Get \"http://10.244.0.5:8000/health\": dial tcp 10.244.0.5:8000: connect: connection refused",
+            "metadata": {
+                "creationTimestamp": "2026-09-06T09:08:39Z",
+                "name": "payment-api-5479566fc7-j4smc.18d2b02f648e4c3e",
+                "namespace": "kavach-lab",
+                "resourceVersion": "630",
+                "uid": "1227cdd4-0d8d-4e7a-9ff7-043673d523f1"
+            },
+            "reason": "Unhealthy",
+            "reportingComponent": "kubelet",
+            "reportingInstance": "kavach-lab-control-plane",
+            "source": {
+                "component": "kubelet",
+                "host": "kavach-lab-control-plane"
+            },
+            "type": "Warning"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-06T09:08:38Z",
+            "involvedObject": {
+                "apiVersion": "apps/v1",
+                "kind": "ReplicaSet",
+                "name": "payment-api-5479566fc7",
+                "namespace": "kavach-lab",
+                "resourceVersion": "607",
+                "uid": "dd4c8767-59d3-46fc-94ad-4f195c8a37b5"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-06T09:08:38Z",
+            "message": "Created pod: payment-api-5479566fc7-j4smc",
+            "metadata": {
+                "creationTimestamp": "2026-09-06T09:08:38Z",
+                "name": "payment-api-5479566fc7.18d2b02f2706ff19",
+                "namespace": "kavach-lab",
+                "resourceVersion": "611",
+                "uid": "80a99138-a58d-436c-8d5d-839e66e69cbc"
+            },
+            "reason": "SuccessfulCreate",
+            "reportingComponent": "replicaset-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "replicaset-controller"
+            },
+            "type": "Normal"
+        },
+        {
+            "apiVersion": "v1",
+            "count": 1,
+            "eventTime": null,
+            "firstTimestamp": "2026-09-06T09:08:38Z",
+            "involvedObject": {
+                "apiVersion": "apps/v1",
+                "kind": "Deployment",
+                "name": "payment-api",
+                "namespace": "kavach-lab",
+                "resourceVersion": "606",
+                "uid": "5ce5dd58-9cfc-45df-8a9a-ddff19288df0"
+            },
+            "kind": "Event",
+            "lastTimestamp": "2026-09-06T09:08:38Z",
+            "message": "Scaled up replica set payment-api-5479566fc7 from 0 to 1",
+            "metadata": {
+                "creationTimestamp": "2026-09-06T09:08:38Z",
+                "name": "payment-api.18d2b02f2630fdd8",
+                "namespace": "kavach-lab",
+                "resourceVersion": "608",
+                "uid": "c8cec803-694e-4fa0-9bde-62d75e72a250"
+            },
+            "reason": "ScalingReplicaSet",
+            "reportingComponent": "deployment-controller",
+            "reportingInstance": "",
+            "source": {
+                "component": "deployment-controller"
+            },
+            "type": "Normal"
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

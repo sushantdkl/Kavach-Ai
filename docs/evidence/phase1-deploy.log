@@ -1,0 +1,6 @@
+namespace/kavach-lab created
+configmap/payment-config created
+service/payment-api created
+deployment.apps/payment-api created
+Waiting for deployment "payment-api" rollout to finish: 0 of 1 updated replicas are available...
+deployment "payment-api" successfully rolled out

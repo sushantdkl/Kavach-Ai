@@ -21,6 +21,12 @@ Docker Desktop startup requested. Initial access-denied inventory failures were
 sandbox restrictions, corrected with an authorized read outside the sandbox.
 The engine's missing named pipe was also confirmed outside the sandbox.
 
+Follow-up: Docker Desktop 4.79.0 started successfully, Linux engine 29.5.3 with
+12 logical CPUs and 7.43 GiB available to Docker. Python/uv access is now working.
+kind v0.33.0 downloaded from its official release and SHA-256 verified. Created
+the isolated kavach-lab cluster using Kubernetes v1.34.0; node reports Ready.
+Existing unrelated Docker containers were discovered and left untouched.
+
 This host has limited available RAM and other running applications. Record free
 memory and competing load for each experiment; single-host interference limits
 generalisability. Do not stop unrelated user applications or services.

@@ -5,9 +5,9 @@ needs measured evidence and a commit. Never infer gate success from file presenc
 
 | Phase | Work and acceptance evidence | Status |
 |---|---|---|
-| 0 Research freeze | Preserve input docs, RQ/H, source audit, ethics, decisions | In progress |
-| 1 Testbed | Tested synthetic API, reproducible image, isolated Kubernetes, fixed-load smoke | In progress |
-| 2 Observability | Prometheus, metrics-server, Grafana, complete synchronized streams | Pending phase 1 |
+| 0 Research freeze | Preserve input docs, RQ/H, source audit, ethics, decisions | Method frozen; literature audit tracked separately |
+| 1 Testbed | Tested synthetic API, reproducible image, isolated Kubernetes, fixed-load smoke | PASS: 25 tests; smoke 20260906T090923Z-f71dab03 |
+| 2 Observability | Prometheus, metrics-server, Grafana, complete synchronized streams | In progress |
 | 3 Baselines | Seeded trace replay, capacity/readiness calibration, repeated Static/tuned HPA runs | Pending phase 2 |
 | 4 Dataset | Immutable run artifacts, coverage validation, run-level chronological partitions | Pending phase 3 |
 | 5 Forecast | Last-value/EWMA/RF/XGB at 5/10/15/30s; unseen-run evaluation | Pending phase 4 |

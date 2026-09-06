@@ -1,0 +1,22 @@
+{
+  "run_id": "20260906T090923Z-f71dab03",
+  "config": {
+    "target": "http://127.0.0.1:8000",
+    "rps_ceiling": 10,
+    "duration_s": 30,
+    "seed": 240005,
+    "purpose": "engineering-smoke-not-research"
+  },
+  "status": "PASS",
+  "config_hash": "fcc1ff6c177bc8c722730b2da6cff8ee845e84ff758be1d8287fae24a81cf284",
+  "git_commit": "181e20a8a921037d2f29e42eecd43fa8d807319a",
+  "working_tree_dirty": true,
+  "host": "Windows-11-10.0.26100-SP0",
+  "start_utc": "2026-09-06T09:09:23.991461+00:00",
+  "requests": 299,
+  "errors": 0,
+  "mean_latency_ms": 9.999999999993186,
+  "p95_latency_ms": 16.000000000076398,
+  "elapsed_s": 30.061999999999898,
+  "end_utc": "2026-09-06T09:09:55.550100+00:00"
+}
