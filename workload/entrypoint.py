@@ -33,6 +33,8 @@ with (folder / "locust.log").open("w") as log:
             "--csv",
             "/data/locust",
             "--csv-full-history",
+            "--exit-code-on-error",
+            "0",
             "--run-time",
             f"{duration + 20}s",
             "--stop-timeout",

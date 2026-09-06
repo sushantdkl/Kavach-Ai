@@ -1,6 +1,7 @@
 """Run one local development/calibration experiment and retain every outcome."""
 
 import argparse
+import csv
 import hashlib
 import json
 import subprocess
@@ -215,6 +216,9 @@ def run(scenario, strategy, replicas, output):
             reasons.append("trace_hash_mismatch")
         if finished["exit_code"] != 0:
             reasons.append(f"locust_exit:{finished['exit_code']}")
+        with (folder / "locust/locust_exceptions.csv").open() as exception_file:
+            if list(csv.DictReader(exception_file)):
+                reasons.append("locust_runtime_exceptions")
         measured = [r for r in requests if not r["dropped"] and r["offset_s"] >= cfg["warmup_s"]]
         latencies = sorted(r["latency_ms"] for r in measured)
         errors = sum(r["status"] < 200 or r["status"] >= 400 for r in measured)
@@ -256,7 +260,7 @@ def run(scenario, strategy, replicas, output):
         metadata.update(validity_status=result["status"], end_utc=datetime.now(UTC).isoformat())
         metadata_path.write_text(json.dumps(metadata, indent=2))
         if core and exported:
-            core.delete_namespaced_pod(pod_name, NAMESPACE)
+            core.delete_namespaced_pod(pod_name, NAMESPACE, grace_period_seconds=1)
             core.delete_namespaced_config_map(pod_name, NAMESPACE)
         if api:
             api.close()
