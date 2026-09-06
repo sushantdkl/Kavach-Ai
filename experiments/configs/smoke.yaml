@@ -1,0 +1,15 @@
+name: smoke
+seed: 240005
+max_rps: 400
+duration_s: 60
+warmup_s: 20
+request_mix:
+  login: 10
+  balance: 30
+  initiate: 30
+  confirm: 20
+  transaction: 10
+stages:
+- duration_s: 60
+  rps: 10
+  label: steady

@@ -1,0 +1,33 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: payment-api
+  namespace: kavach-lab
+  annotations:
+    kavach.ai/status: calibration-candidate-not-yet-tuned
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: payment-api
+  minReplicas: 1
+  maxReplicas: 6
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 60
+  behavior:
+    scaleUp:
+      stabilizationWindowSeconds: 0
+      selectPolicy: Max
+      policies:
+        - {type: Percent, value: 100, periodSeconds: 15}
+        - {type: Pods, value: 4, periodSeconds: 15}
+    scaleDown:
+      stabilizationWindowSeconds: 60
+      selectPolicy: Min
+      policies:
+        - {type: Pods, value: 1, periodSeconds: 30}

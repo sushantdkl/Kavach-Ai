@@ -1,0 +1,51 @@
+name: repeated_burst
+seed: 240005
+max_rps: 400
+duration_s: 210
+warmup_s: 30
+request_mix:
+  login: 10
+  balance: 30
+  initiate: 30
+  confirm: 20
+  transaction: 10
+stages:
+- duration_s: 30
+  rps: 10
+  label: steady
+- duration_s: 15
+  rps: 20
+  label: steady
+- duration_s: 15
+  rps: 150
+  label: flash
+- duration_s: 15
+  rps: 20
+  label: steady
+- duration_s: 15
+  rps: 150
+  label: flash
+- duration_s: 15
+  rps: 20
+  label: steady
+- duration_s: 15
+  rps: 150
+  label: flash
+- duration_s: 15
+  rps: 20
+  label: steady
+- duration_s: 15
+  rps: 150
+  label: flash
+- duration_s: 15
+  rps: 20
+  label: steady
+- duration_s: 15
+  rps: 150
+  label: flash
+- duration_s: 15
+  rps: 20
+  label: steady
+- duration_s: 15
+  rps: 150
+  label: flash

@@ -4,3 +4,7 @@
 !payment-api/app/
 !payment-api/app/*.py
 !payment-api/Dockerfile
+!requirements-workload.lock
+!workload/
+!workload/*.py
+!workload/Dockerfile

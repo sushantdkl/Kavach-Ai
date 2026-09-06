@@ -18,6 +18,9 @@ dev = [
     "kubernetes>=33,<35",
     "pyarrow>=19,<24",
 ]
+workload = [
+    "locust>=2.34,<3",
+]
 
 [tool.pytest.ini_options]
 pythonpath = ["payment-api", "."]

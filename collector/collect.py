@@ -140,7 +140,15 @@ def make_clients(kubeconfig: Path):
     return api, core, client.AppsV1Api(api)
 
 
-def collect(folder: Path, duration: int, interval: int, prometheus: str, kubeconfig: Path):
+def collect(
+    folder: Path,
+    duration: int,
+    interval: int,
+    prometheus: str,
+    kubeconfig: Path,
+    run_config: dict | None = None,
+    start_utc: float | None = None,
+):
     api, core, apps = make_clients(kubeconfig)
     version = client.VersionApi(api).get_code(_request_timeout=5).to_dict()
     initial_pods = core.list_namespaced_pod(
@@ -161,6 +169,8 @@ def collect(folder: Path, duration: int, interval: int, prometheus: str, kubecon
         "slo_error_fraction": 0.01,
         "research_eligible": False,
     }
+    if run_config:
+        conf.update(run_config)
     (folder / "config.yaml").write_text(yaml.safe_dump(conf), encoding="utf-8")
     metadata = {
         "run_id": folder.name,
@@ -178,12 +188,13 @@ def collect(folder: Path, duration: int, interval: int, prometheus: str, kubecon
         "research_eligible": False,
         "reason": "engineering observation; no Locust workload artifact yet",
     }
+    metadata.update(strategy=conf["strategy"], scenario=conf["scenario"], seed=conf["seed"])
     (folder / "metadata.json").write_text(json.dumps(metadata, indent=2), encoding="utf-8")
     rows = []
     seen_pods = {p.metadata.uid for p in initial_pods.items}
     seen_events = {}
     expected = duration // interval
-    started = time.monotonic()
+    started = time.monotonic() + max(0, (start_utc or time.time()) - time.time())
     with (
         httpx.Client(
             base_url=prometheus, timeout=5, trust_env=False, follow_redirects=False
@@ -200,9 +211,9 @@ def collect(folder: Path, duration: int, interval: int, prometheus: str, kubecon
             row = {
                 "run_id": folder.name,
                 "timestamp": stamp,
-                "strategy": "STATIC",
-                "scenario": "observability-smoke",
-                "random_seed": 240005,
+                "strategy": conf["strategy"],
+                "scenario": conf["scenario"],
+                "random_seed": conf["seed"],
                 "controller_mode": "OFF",
                 "forecast_rps_horizon": None,
                 "forecast_error": None,
@@ -281,7 +292,9 @@ def collect(folder: Path, duration: int, interval: int, prometheus: str, kubecon
             rows.append(row)
             raw.write(json.dumps(row, allow_nan=False) + "\n")
             raw.flush()
-    validation = validate_rows(rows, expected, interval)
+    warmup_rows = conf.get("warmup_s", 0) // interval
+    validation = validate_rows(rows[warmup_rows:], expected - warmup_rows, interval)
+    validation["excluded_warmup_rows"] = warmup_rows
     table = pa.Table.from_pylist(rows)
     pq.write_table(table, folder / "metrics.parquet")
     fields = sorted({key for row in rows for key in row})
