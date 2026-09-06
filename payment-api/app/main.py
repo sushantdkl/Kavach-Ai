@@ -16,6 +16,8 @@ from prometheus_client import CollectorRegistry, Counter, Gauge, Histogram, gene
 from prometheus_client.exposition import CONTENT_TYPE_LATEST
 from pydantic import BaseModel, Field
 
+from app.resources import CgroupCollector
+
 
 @dataclass(frozen=True)
 class Settings:
@@ -67,6 +69,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     settings = settings or Settings.from_env()
     app = FastAPI(title="Kavach synthetic payment fixture", version="0.1.0")
     registry = CollectorRegistry()
+    registry.register(CgroupCollector())
     requests = Counter(
         "kavach_requests_total",
         "Completed business requests",

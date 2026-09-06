@@ -35,3 +35,13 @@ Decision: no forecasting/controller/UI implementation until prerequisite gates
 pass. Alternative: scaffold the entire stack before running it. Reason: master
 prompt forbids jumping forward. Consequence: an environment blocker may leave
 later deliverables pending; no simulated results may stand in for cluster data.
+## D006 — Fresh cgroup counters for the research collector
+Decision: expose the container's own cgroup v2 CPU counter and memory working set
+at each /metrics scrape; retain kubelet cAdvisor and metrics-server for independent
+inspection/HPA. Alternative: relax freshness to accept 15-second cached kubelet
+samples, or alter kubelet behavior. Reason: observed first live collector run had
+stale CPU/memory and empty rate windows. Kubernetes hardcodes dynamic cAdvisor
+housekeeping up to 15 seconds. Consequence: short-interval collector CPU is based
+on actual cgroup counters with explicit read timestamps; HPA's native metrics
+timing is unchanged. Same API instrumentation applies to every strategy.
+Source: https://github.com/kubernetes/kubernetes/blob/v1.34.0/pkg/kubelet/cadvisor/cadvisor_linux.go
